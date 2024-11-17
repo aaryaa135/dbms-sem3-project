@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222327;
+    padding: 0;
+    color: #e0e0e0; /* Adjust text color for better readability */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px; /* Add padding to container for better spacing */
+}
+
+h1 {
+    font-family: "Fjalla One", sans-serif;
+    margin-top: 30px;
+      line-height: 1.4;
+      font-size: 60px;
+      letter-spacing: 0.5px;
+      text-align: left;
+    color: white;
+}
+.contact-head{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%; /* Fixed width */
+    height: 270px; /* Fixed height */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the top-left */
+    margin-bottom: 20px;
+}
+
+
+
+.card h2 {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    width: 100%; /* Make the heading span the full width of the card */
+    box-sizing: border-box; /* Ensure padding is included within the width */
+}
+
+.card p {
+    font-size: 16px;
+    color: #333; /* Use darker color for better contrast against light background */
+}
+
+.highlight {
+    font-weight: bold;
+    color: #000;
+}
+
+main {
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    padding-top: 100px;
+    color: #878282;
+    text-align: center; /* Center-align footer content */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+    }
+    .contact-head{
+        font-size: 40px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222327;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 10px 20px 20px;
+}
+
+
+.news-card {
+  display: flex;
+  background-color: #a09ca5; /* Adjusted background color similar to the screenshot */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Add space between each card */
+  max-width: 1250px; /* Set a reasonable width for each card */
+  height: auto;
+}
+
+.news-image {
+  flex: 0 0 200px; /* Set a fixed width for the image container */
+  margin-right: 20px;
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  justify-content: center;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  object-fit: cover; /* Ensure the image fits nicely */
+}
+
+.news-content {
+  padding: 8px;
+  flex: 2;
+  color: black;
+  display: flex;
+  text-align: left; 
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+}
+
+.news-content h2 {
+  margin: 0;
+  font-size: 20px; /* Adjust font size */
+  font-weight: bold;
+}
+
+.news-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 10px; /* Space between title and text */
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.read-more {
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+.read-more a {
+    color: white;
+    font-weight: lighter;
+    text-decoration: none;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.read-more a:hover {
+    background-color: #40424a; /* Hover background color */
+    color: #75dab4; /* Change text color to white for better contrast */
+    text-decoration: none; /* Remove underline */
+}
+
+
+@media (max-width: 768px) {
+  .news-card {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .news-image {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 100%; /* Make image container full width */
+  }
+
+  .news-content {
+      align-items: flex-start;
+  }
+}
