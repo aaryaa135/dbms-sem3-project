@@ -353,112 +353,6 @@ section {
     color: crimson;
 }
 
-.course-3 {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
-    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
-    gap: 1.5rem;
-}
-
-.course-3 .box {
-    text-align: center;
-    overflow: hidden;
-}
-
-.course-3 .box:hover .video video {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-
-.course-3 .box .video {
-    height: 25rem;
-    width: 100%;
-    overflow: hidden;
-    border-radius: .5rem;
-    position: relative;
-}
-
-.course-3 .box .video video {
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    cursor: pointer;
-}
-
-.course-3 .box .video i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    border-radius: 50%;
-    background: #fff;
-    color: #302851;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.course-3 .box .content {
-    padding-top: 1rem;
-}
-
-.course-3 .box .content h3 {
-    font-size: 1.7rem;
-    color: #302851;
-    padding: .5rem 0;
-}
-
-.course-3 .box .content p {
-    font-size: 1.5rem;
-    color: #666;
-}
-
-.main-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-    background: rgba(0, 0, 0, 0.7);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    display: none;
-}
-
-.main-video.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.main-video #close-vid {
-    position: absolute;
-    top: 1.5rem;
-    right: 2.5rem;
-    font-size: 6rem;
-    color: #fff;
-    cursor: pointer;
-}
-
-.main-video video {
-    width: 80%;
-    border: 0.5rem solid #fff;
-    border-radius: .5rem;
-}
 
 .teachers {
     display: -ms-grid;
@@ -814,3 +708,45 @@ section {
 
 
 /*# sourceMappingURL=style.css.map */
+
+.course-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-3 .box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-3 .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-3 .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.course-3 .content h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+.course-3 .content p {
+    font-size: 0.9rem;
+    color: #666;
+}
