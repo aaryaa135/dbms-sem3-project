@@ -57,8 +57,8 @@
         <div class="content">
             <h3>Koshish Club is not a club but an emotion !</h3>
             <p>Koshish Club is dedicated to empowering children through education, both on campus and beyond. Our enthusiastic student volunteers teach subjects like English, Math, and Science, following a thoughtfully planned weekly schedule tailored to the children’s needs. By focusing on practical, engaging learning, we help these young minds flourish. Classes are conducted in university classrooms equipped with modern teaching tools, and we regularly organize fun activities to spark their interest and curiosity. Together, we strive to build brighter futures, one lesson at a time.</p>
-            <a href="about us.html" class="btn">learn more</a>
-            </div>div
+            
+            </div>
 
     </section>
 
@@ -72,10 +72,10 @@
                         <h3 class="section-title">FACULTY COORDINATORS</h3>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row cards-container">
                     <figure class="reveal-effect masker wow">
                         <div class="card-faculty">
-                            <img src="https://www.juit.ac.in/profile_pics/juit_faculty_profile856ddaa291.jpg" />
+                            <img src="https://www.juit.ac.in/profile_pics/juit_faculty_profile856ddaa291.jpg" alt="Prof. Dr. Hemant Sood">
                             <div class="card-info">
                                 <h6>Prof. Dr. Hemant Sood</h6>
                                 <span>Incharge Coordinator</span>
@@ -84,7 +84,7 @@
                     </figure>
                     <figure class="reveal-effect masker wow">
                         <div class="card-faculty">
-                            <img src="https://www.juit.ac.in/profile_pics/prateek_cse.jpg" />
+                            <img src="https://www.juit.ac.in/profile_pics/prateek_cse.jpg" alt="Dr. Prateek Thakral">
                             <div class="card-info">
                                 <h6>Dr. Prateek Thakral</h6>
                                 <span>Coordinator</span>
@@ -94,6 +94,55 @@
                 </div>
             </div>
         </section>
+        
+        <style>
+        /* Styles specific to the team section */
+        .team .cards-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .card-faculty {
+            width: 300px; /* Set a fixed width for the cards */
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-faculty:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-faculty img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .card-info {
+            padding: 15px;
+            background-color: #f5f5f5;
+        }
+        
+        .card-info h6 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .card-info span {
+            font-size: 0.9em;
+            color: #666;
+        }
+        </style>
+        
     
         <!-- Current Coordinators Section -->
         <section class="teams">
@@ -103,10 +152,10 @@
                         <h3 class="section-title">CURRENT COORDINATORS</h3>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row cards-container">
                     <figure class="reveal-effect masker wow">
                         <div class="card-coordinator">
-                            <img src="images/vanshaj.webp" />
+                            <img src="images/vanshaj.webp" alt="Vanshaj Sharma">
                             <div class="card-info">
                                 <h6>VANSHAJ SHARMA</h6>
                                 <div class="social">
@@ -117,7 +166,7 @@
                     </figure>
                     <figure class="reveal-effect masker wow">
                         <div class="card-coordinator">
-                            <img src="images/aastha.webp" />
+                            <img src="images/aastha.webp" alt="Aastha Jain">
                             <div class="card-info">
                                 <h6>AASTHA JAIN</h6>
                                 <div class="social">
@@ -128,7 +177,7 @@
                     </figure>
                     <figure class="reveal-effect masker wow">
                         <div class="card-coordinator">
-                            <img src="images/rashi.webp" />
+                            <img src="images/rashi.webp" alt="Raashi Sharma">
                             <div class="card-info">
                                 <h6>RAASHI SHARMA</h6>
                                 <div class="social">
@@ -139,7 +188,7 @@
                     </figure>
                     <figure class="reveal-effect masker wow">
                         <div class="card-coordinator">
-                            <img src="images/ramandeep.webp" />
+                            <img src="images/ramandeep.webp" alt="Ramandeep Singh">
                             <div class="card-info">
                                 <h6>RAMANDEEP SINGH</h6>
                                 <div class="social">
@@ -151,6 +200,93 @@
                 </div>
             </div>
         </section>
+        
+        <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .teams {
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .card-coordinator {
+            width: 280px; /* Fixed width for each card */
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-coordinator:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-coordinator img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .card-info {
+            padding: 15px;
+            background-color: #f5f5f5;
+        }
+        
+        .card-info h6 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card-info .social a {
+            color: #0077b5; /* LinkedIn Blue */
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        
+        .card-info .social a:hover {
+            color: #005582;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .cards-container {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .card-coordinator {
+                width: 90%;
+            }
+        }
+        </style>
+        
     </div>
     
 
@@ -201,7 +337,7 @@
 
         </div>
 
-        <div class="credit"> created by <span>Jaffna College</span> | all rights reserved! </div>
+        <div class="credit"> All rights reserved! </div>
 
     </section>
 
