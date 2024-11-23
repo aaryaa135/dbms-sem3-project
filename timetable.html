@@ -2,66 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Timetable</title>
+    <title>Koshish Club | Timetable</title>
+    <link rel="shortcut icon" type="image/png" href="images/Koshish_Logo-removebg-preview 2.png">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/timetable.css">
 </head>
 <body>
-    <div class="header">
-        <h1>School Timetable</h1>
-    </div>
-    <div class="timetable-container">
-        <table id="timetable">
-            <thead>
-                <tr>
-                    <th>Classes</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                </tr>
-            </thead>
-            <tbody id="timetable-body">
-                <tr>
-                    <td>1 to 3</td>
-                    <td class="editable" contenteditable="true">Math</td>
-                    <td class="editable" contenteditable="true">Science</td>
-                    <td class="editable" contenteditable="true">English</td>
-                    <td class="editable" contenteditable="true">History</td>
-                    <td class="editable" contenteditable="true">Geography</td>
-                </tr>
-                <tr>
-                    <td>4 to 5</td>
-                    <td class="editable" contenteditable="true">Science</td>
-                    <td class="editable" contenteditable="true">Math</td>
-                    <td class="editable" contenteditable="true">Art</td>
-                    <td class="editable" contenteditable="true">Music</td>
-                    <td class="editable" contenteditable="true">Physical Ed.</td>
-                </tr>
-                <tr>
-                    <td>6 to 7</td>
-                    <td class="editable" contenteditable="true">Science</td>
-                    <td class="editable" contenteditable="true">Math</td>
-                    <td class="editable" contenteditable="true">Art</td>
-                    <td class="editable" contenteditable="true">Music</td>
-                    <td class="editable" contenteditable="true">Physical Ed.</td>
-                </tr>
-                <tr>
-                    <td>8 to 10</td>
-                    <td class="editable" contenteditable="true">Science</td>
-                    <td class="editable" contenteditable="true">Math</td>
-                    <td class="editable" contenteditable="true">Art</td>
-                    <td class="editable" contenteditable="true">Music</td>
-                    <td class="editable" contenteditable="true">Physical Ed.</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="actions">
-            <button id="add-row">Add Row</button>
-            <button id="save-timetable">Save Timetable</button>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="index.html" class="logo">
+            <i class="fas fa-user-graduate"></i> Koshish Club
+        </a>
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery1.html">GALLERY</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="ContactUs/contact.php">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Timetable Section -->
+    <section class="timetable-section">
+        <div class="tt">
+            <h1>School Timetable</h1>
         </div>
-    </div>
+        <div class="timetable-container">
+            <table id="timetable">
+                <thead>
+                    <tr>
+                        <th>Classes</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody id="timetable-body">
+                    <tr>
+                        <td>1 to 3</td>
+                        <td class="editable" contenteditable="true">Math</td>
+                        <td class="editable" contenteditable="true">Science</td>
+                        <td class="editable" contenteditable="true">English</td>
+                        <td class="editable" contenteditable="true">History</td>
+                        <td class="editable" contenteditable="true">Geography</td>
+                    </tr>
+                    <tr>
+                        <td>4 to 5</td>
+                        <td class="editable" contenteditable="true">Science</td>
+                        <td class="editable" contenteditable="true">Math</td>
+                        <td class="editable" contenteditable="true">Art</td>
+                        <td class="editable" contenteditable="true">Music</td>
+                        <td class="editable" contenteditable="true">Physical Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>6 to 7</td>
+                        <td class="editable" contenteditable="true">Science</td>
+                        <td class="editable" contenteditable="true">Math</td>
+                        <td class="editable" contenteditable="true">Art</td>
+                        <td class="editable" contenteditable="true">Music</td>
+                        <td class="editable" contenteditable="true">Physical Ed.</td>
+                    </tr>
+                    <tr>
+                        <td>8 to 10</td>
+                        <td class="editable" contenteditable="true">Science</td>
+                        <td class="editable" contenteditable="true">Math</td>
+                        <td class="editable" contenteditable="true">Art</td>
+                        <td class="editable" contenteditable="true">Music</td>
+                        <td class="editable" contenteditable="true">Physical Ed.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="actions">
+                <button id="add-row">Add Row</button>
+                <button id="save-timetable">Save Timetable</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="box-container">
+            <!-- Explore Links -->
+            <div class="box">
+                <h3>Explore</h3>
+                <a href="index.html"><i class="fas fa-arrow-right"></i> HOME</a>
+                <a href="about.html"><i class="fas fa-arrow-right"></i> ABOUT</a>
+                <a href="gallery1.html"><i class="fas fa-arrow-right"></i> GALLERY</a>
+                <a href="blog.html"><i class="fas fa-arrow-right"></i> BLOG</a>
+                <a href="ContactUs/contact.php"><i class="fas fa-arrow-right"></i> CONTACT US</a>
+            </div>
+
+            <!-- Follow Us Links -->
+            <div class="box">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.youtube.com/channel/UCXxTe5lB_fjn1H5azGBgWDw"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </div>
+
+        <div class="credit">All rights reserved!</div>
+    </footer>
+
+    <!-- Custom JS -->
     <script src="js/timetable.js"></script>
 </body>
 </html>
