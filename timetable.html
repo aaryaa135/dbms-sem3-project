@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="css/timetable.css">
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>School Timetable</h1>
+    </div>
+    <div class="timetable-container">
         <table id="timetable">
             <thead>
                 <tr>
-                    <th>Class</th>
+                    <th>Classes</th>
                     <th>Monday</th>
                     <th>Tuesday</th>
                     <th>Wednesday</th>
@@ -22,7 +24,7 @@
             </thead>
             <tbody id="timetable-body">
                 <tr>
-                    <td>1 - 3</td>
+                    <td>1 to 3</td>
                     <td class="editable" contenteditable="true">Math</td>
                     <td class="editable" contenteditable="true">Science</td>
                     <td class="editable" contenteditable="true">English</td>
@@ -30,7 +32,7 @@
                     <td class="editable" contenteditable="true">Geography</td>
                 </tr>
                 <tr>
-                    <td>4 - 5</td>
+                    <td>4 to 5</td>
                     <td class="editable" contenteditable="true">Science</td>
                     <td class="editable" contenteditable="true">Math</td>
                     <td class="editable" contenteditable="true">Art</td>
@@ -38,7 +40,7 @@
                     <td class="editable" contenteditable="true">Physical Ed.</td>
                 </tr>
                 <tr>
-                    <td>6 - 7</td>
+                    <td>6 to 7</td>
                     <td class="editable" contenteditable="true">Science</td>
                     <td class="editable" contenteditable="true">Math</td>
                     <td class="editable" contenteditable="true">Art</td>
@@ -46,7 +48,7 @@
                     <td class="editable" contenteditable="true">Physical Ed.</td>
                 </tr>
                 <tr>
-                    <td>7 - 10</td>
+                    <td>8 to 10</td>
                     <td class="editable" contenteditable="true">Science</td>
                     <td class="editable" contenteditable="true">Math</td>
                     <td class="editable" contenteditable="true">Art</td>
@@ -55,10 +57,11 @@
                 </tr>
             </tbody>
         </table>
-        <button id="add-row">Add Row</button>
-        <button id="save-timetable">Save Timetable</button>
+        <div class="actions">
+            <button id="add-row">Add Row</button>
+            <button id="save-timetable">Save Timetable</button>
+        </div>
     </div>
-
     <script src="js/timetable.js"></script>
 </body>
 </html>
