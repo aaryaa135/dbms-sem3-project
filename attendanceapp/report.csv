@@ -1,14 +1,23 @@
 Session:,"2023 AUTUMN SEMESTER"
-Course:,"CS112-Data Mining & Data Warehousing"
-Faculty:,"Ram Charan Baishya"
-total,1
-start,2024-11-24
-end,2024-11-24
-slno,rollno,name,attended,percent
-4,CSB21004,"David Brown",1,100
-6,CSB21006,"Christopher Davis",0,0
-8,CSB21008,"Ethan Anderson",0,0
-11,CSB21011,"Ava Taylor",0,0
-13,CSM21001,"Mia Garcia",0,0
-14,CSM21002,"William White",0,0
-22,CSM21010,"Caleb Baker",0,0
+Course:,"CO321-Database management system lab"
+Faculty:,Pallabi
+total,8
+start,2024-04-06
+end,2024-04-29
+slno,roll_no,name,2024-04-06,2024-04-17,2024-04-18,2024-04-20,2024-04-22,2024-04-25,2024-04-28,2024-04-29,attended,percent
+1,CSB21003,"Ryan Thompson",P,P,P,P,P,P,P,P,8,100
+2,CSB21004,"Sophia Williams",P,P,P,P,P,P,P,P,8,100
+3,CSB21005,"Daniel Brown",P,P,P,P,A,P,P,P,7,87.5
+4,CSB21006,"Olivia Jones",P,P,A,P,P,P,A,A,5,62.5
+5,CSB21007,"Matthew Davis",P,A,A,P,P,P,A,P,5,62.5
+6,CSB21009,"David Wilson",P,P,P,P,P,A,A,A,5,62.5
+7,CSB21010,"Sarah Taylor",P,P,A,P,P,P,A,A,5,62.5
+8,CSB21011,"Michael Martinez",P,P,A,P,A,P,A,A,4,50
+9,CSB21012,"Ava Anderson",P,P,A,P,A,P,P,P,6,75
+10,CSM21001,"Liam Garcia",P,A,A,P,A,P,A,P,4,50
+11,CSM21002,"Isabella Rodriguez",P,P,P,P,A,A,P,P,6,75
+12,CSM21005,"Mason Lopez",P,P,P,P,P,P,A,P,7,87.5
+13,CSM21007,"Alexander Gonzalez",P,P,P,P,P,P,A,P,7,87.5
+14,CSM21008,"Ava Johnson",P,P,A,P,P,P,A,P,6,75
+15,CSM21011,"James Rodriguez",P,P,P,P,P,P,P,P,8,100
+16,CSM21012,"Emma Hernandez",P,P,P,P,P,P,P,P,8,100

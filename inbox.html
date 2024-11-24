@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Inbox</title>
+    <link rel="stylesheet" href="css/inbox.css">
+</head>
+<body>
+
+    <!-- Login Section -->
+    <div id="login-section" class="login-section">
+        <h2>Login to Chat</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-error" class="error-message"></p>
+    </div>
+
+    <!-- Chat Inbox Section -->
+    <div id="chat-section" class="chat-section" style="display:none;">
+        <header class="chat-header">
+            <h2>Welcome to the Chat!</h2>
+            <button id="logout-btn" class="logout-btn">Logout</button>
+        </header>
+
+        <div class="chat-container">
+            <div id="chat-box" class="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="input-box">
+                <input type="text" id="message-input" placeholder="Type a message..." />
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/inbox.js"></script>
+</body>
+</html>

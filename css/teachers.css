@@ -1,54 +1,128 @@
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
+    padding: 20px;
 }
 
+/* Container Styling */
 .container {
     max-width: 900px;
     margin: 50px auto;
     text-align: center;
+    padding: 0 15px; /* Added padding for better mobile spacing */
 }
 
+/* Heading Styling */
 h1 {
     margin-bottom: 40px;
     font-size: 2rem;
+    color: #1e01d6;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: bold;
 }
 
+/* Teacher Box Styling */
 .teacher-box {
     background-color: white;
     padding: 20px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 15px 0; /* Increased spacing for better visual separation */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.teacher-box:hover {
+    transform: scale(1.03); /* Subtle scaling on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
 }
 
 .teacher-box h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+    color: #1e01d6;
 }
 
 .teacher-box p {
     font-size: 1rem;
     margin: 5px 0;
+    color: #555; /* Softer color for text */
 }
 
+/* Button Styling */
 button {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px; /* Slightly larger padding for better appearance */
     font-size: 1rem;
     background-color: #1e01d6;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #1e01d6;
+    background-color: #1500a3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .teacher-box {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .teacher-box h2 {
+        font-size: 1.3rem;
+    }
+
+    .teacher-box p {
+        font-size: 0.95rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .teacher-box {
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .teacher-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .teacher-box p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
 }

@@ -10,7 +10,7 @@
 <body>
     <div class="loginform">
              <div class="inputgroup topmarginlarge">
-                    <input type="text" id="txtUsername" required>
+                    <input  type="text" id="txtUsername" required>
                     <label for="txtUsername" id="lblUsername">USER NAME</label>
              </div>
 

@@ -8,7 +8,7 @@ class SessionDetails
         //received as an argument
         {
         $rv=[];
-        $c="select * from session_details";   
+        $c="select * from session_details order by id desc";   
         $s=$dbo->conn->prepare($c);
         try{
             $s->execute();

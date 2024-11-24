@@ -42,10 +42,13 @@ function loadSessions()
         data:{action:"getSession"},
         beforeSend:function(e)
         {
-
+            $("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
         },
         success:function(rv)
         {
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
             //alert(JSON.stringify(rv));
             //lets create the HTML from rv dynamically
             let x=getSessionHTML(rv);
@@ -53,6 +56,8 @@ function loadSessions()
         },
         error:function(e)
         {
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
             alert("OOPS!");
         }
     });
@@ -83,17 +88,21 @@ function fetchFacultyCourses(facid,sessionid)
         data:{facid:facid,sessionid:sessionid,action:"getFacultyCourses"},
         beforeSend:function(e)
         {
-
+            $("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
         },
         success:function(rv)
         {
+           //$("#overlay").fadeIn();
+           $("#overlay").fadeOut(); 
         //alert(JSON.stringify(rv));
         let x=getCourseCardHTML(rv);
         $("#classlistarea").html(x);
         },
         error:function(e)
         {
-
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
         }
     });
 }
@@ -122,14 +131,93 @@ function getClassdetailsAreaHTML(classobject)
      <input type="date" value='${ondate}' id='dtpondate'>
  </div>
 </div>`;
+x=x+`
+<div class='navbarcover'>
+<div class="navbar">
+  <a href="#" id='linkTakeAttendance'>TAKE ATTENDANCE</a>
+  <a href="#" id='linkEmailAttendanceShortage'>NOTIFY ATTENDANCE SHORTAGE</a>
+  <a href="#" id='linkReport'>REPORT</a>
+</div>
+</div>
+`;
  return x;
 }
 
-function getStudentListHTML(studentList)
+function getDeafulterListHTML(o,caption='')
 {
+    if(caption=='')
+    {
+        caption="When you click 'SEND EMAIL,' an email will be automatically sent to all the students listed above.";
+    }
+
+    let i=0;
+    let x=``;
+    x=x+`
+    <div>
+    Total Classes=<label class="boldlabel">${o.total}</label>
+    </div>
+    `;
+    if(o['studentlist'].length>0)
+    {
+        for (i=0;i<o['studentlist'].length;i++)
+        {
+            let cs=o['studentlist'][i];
+            x=x+`<div class="dstudentdetails " id="dstudent${cs['id']}">
+            <div class="dslno-area">${(i+1)}</div>
+            <div class="drollno-area">${cs['roll_no']}</div>
+            <div class="dname-area">${cs['name']}</div>
+            <div class="demail-area">${cs['email_id']}</div>
+            <div class="dattended-area"><label class='topLabel'>${cs['attended']}</label><label class='subLabel'>CLASSES</label></div>
+            <div class="dpercent-area"><label class='topLabel'>${cs['percent']}</label><label class='subLabel'>%</label></div>
+            <div class="dsent-area"><label class='topLabel'>${cs['sent_count']}</label><label class='subLabel'>NOTIFIED</label></div>
+            </div>`;
+        }
+        x=x+`<div class='divstatus'>
+        <p id='pStatus'>${caption}</p>        
+        </div>
+        <div class='divsendmailbtn'>
+        <button class='button' id='btnSendEmail'>SEND EMAIL</bitton>
+        </div>
+      `;
+    }
+    else{
+        x=x+`<div class='divstatus'>
+        <p id='pStatus'>NO DEFAULTER STUDENTS</p>        
+        </div>`;
+    }
     
+    
+return x;
+}
+function getReportPanel()
+{
+    let x=`<div class='divDownloadReports'>
+            <button class='button' id='btnSummary'>DOWNLOAD SUMMARY</button>
+            <button class='button' id='btnDetailed'>DOWNLOAD DETAILS</button>
+            </div> 
+            <div id="divReport"></div>         
+        `;
+    return x;
+}
+function getSendEmailPanel()
+{
+    let x=`<div class='divSendEmailNotificationInner'>
+            <div class="searchSendEmail"> 
+            <input type='text' id='txtCutOff' class="transparent-textbox" placeholder="Enter Attendance Cut Off">
+            <button class='button' id='btnLoadDeafulterList'>GO</button>
+            </div>
+
+            <div id='defaulterStudentList' class='defaulterStudentList'>
+            </div>
+            </div> 
+        `;
+    return x;
+}
+function getStudentListHTML(o)
+{    
+  let studentList=o['studentlist'];
   let x=`<div class="studenttlist">
-  <label>STUDENT LIST</label>
+  <label>TOTAL CLASS=</label><label class="boldlabel">${o.total}</label>
          </div>`;
  let i=0;
  for(i=0;i<studentList.length;i++)
@@ -148,18 +236,15 @@ function getStudentListHTML(studentList)
     <div class="slno-area">${(i+1)}</div>
     <div class="rollno-area">${cs['roll_no']}</div>
     <div class="name-area">${cs['name']}</div>
+    <div class="attended-area"><label class='topLabel'>${cs['attended']}</label><label class='subLabel'>CLASSES</label></div>
+    <div class="percent-area"><label class='topLabel'>${cs['percent']}</label><label class='subLabel'>%</label></div>
     <div class="checkbox-area" data-studentid='${cs['id']}'>
         <input type="checkbox" class="cbpresent" data-studentid='${cs['id']}' ${checkedState}>
         <!--we will do it dynamically, but before that lets save 
         a few attendance-->
     </div>
-</div>`;
- }
-  x=x+`<div class="reportsection">
-  <button id="btnReport">REPORT</button>
- </div>
- <div id="divReport"></div>
-  `;
+    </div>`;
+ }  
   return x;
 }
 
@@ -173,10 +258,13 @@ function fetchStudentList(sessionid,classid,facid,ondate)
         data:{facid:facid,ondate:ondate,sessionid:sessionid,classid:classid,action:"getStudentList"},
         beforeSend:function(e)
         {
-
+            $("#overlay").fadeIn();
+           // $("#overlay").fadeOut();
         },
         success:function(rv)
         {
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
           //alert(JSON.stringify(rv));
           //get the studentlist HTML
           let x=getStudentListHTML(rv);
@@ -184,7 +272,8 @@ function fetchStudentList(sessionid,classid,facid,ondate)
         },
         error:function(e)
         {
-
+                //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
         }
     });
 }
@@ -198,10 +287,13 @@ function saveAttendance(studentid,courseid,facultyid,sessionid,ondate,ispresent)
         data:{studentid:studentid,courseid:courseid,facultyid:facultyid,sessionid:sessionid,ondate:ondate,ispresent:ispresent,action:"saveattendance"},
         beforeSend:function(e)
         {
-
+                //$("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
         },
         success:function(rv)
         {
+            //$("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
         //alert(JSON.stringify(rv));
         //we saved the attendance now lets view them
         if(ispresent=="YES")
@@ -216,25 +308,30 @@ function saveAttendance(studentid,courseid,facultyid,sessionid,ondate,ispresent)
         },
         error:function(e)
         {
+            //$("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
             alert("OOPS!");
         }
     });
 }
 
-function downloadCSV(sessionid,classid,facid)
+function downloadCSV(sessionid,classid,facid,name='downloadDetailsReport')
 {
     //make ajax call to fetch from server
     $.ajax({
         url:"ajaxhandler/attendanceAJAX.php",
         type:"POST",
         dataType:"json",
-        data:{sessionid:sessionid,classid:classid,facid:facid,action:"downloadReport"},
+        data:{sessionid:sessionid,classid:classid,facid:facid,action:name},
         beforeSend:function(e)
         {
-
+            $("#overlay").fadeIn();
+            //$("#overlay").fadeOut();
         },
         success:function(rv)
         {
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
        //alert(JSON.stringify(rv));
        //lets download the file
        let x=`
@@ -244,9 +341,97 @@ function downloadCSV(sessionid,classid,facid)
         },
         error:function(e)
         {
+            //$("#overlay").fadeIn();
+            $("#overlay").fadeOut();
             alert("OOPS!");
         }
     });
+}
+function getDefaulterList(sessionid,classid,facid,cutoff=75,caption='')
+{
+    $.ajax({
+        url:"ajaxhandler/attendanceAJAX.php",
+        type:"POST",
+        dataType:"json",
+        data:{facid:facid,sessionid:sessionid,classid:classid,cutoff:cutoff,action:"getdefaulterStudentList"},
+        beforeSend:function(e)
+        {
+            $("#overlay").fadeIn();           
+            //$("#overlay").fadeOut();
+        },
+        success:function(rv)
+        {
+          //alert(JSON.stringify(rv));
+          //get the studentlist HTML   
+        //alert(JSON.stringify(rv))   
+         $("#overlay").fadeOut();
+
+         let x=getDeafulterListHTML(rv,caption);
+         $("#defaulterStudentList").html(x);
+        },
+        error:function(e)
+        {
+            $("#overlay").fadeOut();
+            alert('Something went wrong!');
+        }
+    });
+}
+
+function sendEmails(sessionid,classid,facid,cutoff)
+{
+    $.ajax({
+        url:"ajaxhandler/attendanceAJAX.php",
+        type:"POST",
+        dataType: "json",
+        data: {facid:facid,sessionid:sessionid,classid:classid,cutoff:cutoff, action: "sendEmailToDefaulterStudents" },
+        beforeSend: function () {
+            $("#overlay").fadeIn();
+        },
+        success: function (result) {
+            $("#overlay").fadeOut();
+            //$('#pStatus').text('EMAIL SENT');
+            if(result['mailsent']=='OK')
+            {
+                loadDefaulter('EMAIL SENT');
+            }
+            else{
+                loadDefaulter('EMAIL NOT SENT');
+            }
+        },
+        error: function () {
+          alert("something went wrong"); 
+          $('#pStatus').text('EMAIL NOT SENT');
+          $("#overlay").fadeOut();            
+        },
+      });
+}
+
+function loadTakeAttendance()
+{
+    let sessionid=$("#ddlclass").val();//sorry for the name
+         let classid=$("#hiddenSelectedCourseID").val();
+         let facid=$("#hiddenFacId").val();
+         let ondate=$("#dtpondate").val();
+         if(sessionid!=-1)
+         {
+            //here we want to fetch the student list along with the
+            //attendance on current date. For that we also have to
+            //pass facid and ondate to the following function
+            fetchStudentList(sessionid,classid,facid,ondate);
+         }
+}
+function loadDefaulter(caption='')
+{
+    let sessionid=$("#ddlclass").val();//sorry for the name
+        let classid=$("#hiddenSelectedCourseID").val();
+        let facid=$("#hiddenFacId").val();
+        let cutoff=$("#txtCutOff").val();
+        // Check if data is a number
+        if (cutoff!='' && !isNaN(cutoff)) {
+            getDefaulterList(sessionid,classid,facid,cutoff,caption);
+        } else {
+           alert('INVALID INPUT');
+        }
 }
 //as soon as the page is done loading do the following
 $(function(e)
@@ -260,12 +445,17 @@ $(function(e)
                 dataType:"json",
                 data:{id:1},
                 beforeSend:function(e){
-
+                    $("#overlay").fadeIn();
+                    //$("#overlay").fadeOut();
                 },
                 success:function(e){
+                     //$("#overlay").fadeIn();
+                        $("#overlay").fadeOut();
                     document.location.replace("login.php");
                 },
                 error:function(e){
+                    //$("#overlay").fadeIn();
+                    $("#overlay").fadeOut();
                     alert("Something went wrong!");
                 }
             }
@@ -336,27 +526,69 @@ $(function(e)
     $(document).on("change","#dtpondate",function(e){
       //alert($("#dtpondate").val());
       //now load the studentlist on this day
-         let sessionid=$("#ddlclass").val();//sorry for the name
-         let classid=$("#hiddenSelectedCourseID").val();
-         let facid=$("#hiddenFacId").val();
-         let ondate=$("#dtpondate").val();
-         if(sessionid!=-1)
-         {
-            //here we want to fetch the student list along with the
-            //attendance on current date. For that we also have to
-            //pass facid and ondate to the following function
-            fetchStudentList(sessionid,classid,facid,ondate);
-         }
+         loadTakeAttendance();
     });
-    $(document).on("click","#btnReport",function(){
-        alert("CLICKED");
-        //send the session course faculty to server
-        //and get a csv filename in return
-        //server will create the CSV file which will contain
-        //the report
+    $(document).on("click","#btnLoadDeafulterList",function(){
+        //alert("CLICKED");
+        loadDefaulter();
+        
+    })
+    $(document).on("keydown","#txtCutOff",function(event){
+        // Get the key code of the pressed key
+        const keyCode = event.keyCode || event.which;
+
+        // Allow only numbers, decimal point, backspace, delete, arrow keys, and decimal point
+        if (!(/[0-9\b\.\t]/.test(String.fromCharCode(keyCode)) || // Numbers, backspace, tab, and decimal point
+            keyCode === 46 || // Delete key
+            (keyCode >= 37 && keyCode <= 40))) { // Arrow keys
+            event.preventDefault(); // Prevent the default action
+        }
+
+        // Allow only one decimal point
+        const value = this.value;
+        if (keyCode === 46 && value.indexOf('.') !== -1) {
+            event.preventDefault();
+        }
+    })
+    $(document).on("click","#btnSendEmail",function(){
         let sessionid=$("#ddlclass").val();//sorry for the name
         let classid=$("#hiddenSelectedCourseID").val();
         let facid=$("#hiddenFacId").val();
-        downloadCSV(sessionid,classid,facid);
+        let cutoff=$("#txtCutOff").val();
+        // Check if data is a number
+        if (cutoff!='' && !isNaN(cutoff)) {
+            sendEmails(sessionid,classid,facid,cutoff);
+        } else {
+           alert('INVALID INPUT');
+        }
     })
+    //loadTakeAttendance()
+    $(document).on("click","#linkTakeAttendance",function(){
+        loadTakeAttendance();
+    })
+    $(document).on("click","#linkEmailAttendanceShortage",function(){
+       let x=getSendEmailPanel();
+       $("#studentlistarea").html(x);
+    })
+    
+    $(document).on("click","#linkReport",function(){
+        /*let sessionid=$("#ddlclass").val();//sorry for the name
+        let classid=$("#hiddenSelectedCourseID").val();
+        let facid=$("#hiddenFacId").val();
+        downloadCSV(sessionid,classid,facid);*/
+        let x=getReportPanel();
+        $("#studentlistarea").html(x);
+     })
+     $(document).on("click","#btnSummary",function(){
+        let sessionid=$("#ddlclass").val();//sorry for the name
+        let classid=$("#hiddenSelectedCourseID").val();
+        let facid=$("#hiddenFacId").val();
+        downloadCSV(sessionid,classid,facid,'downloadSummaryReport');
+     })
+     $(document).on("click","#btnDetailed",function(){
+        let sessionid=$("#ddlclass").val();//sorry for the name
+        let classid=$("#hiddenSelectedCourseID").val();
+        let facid=$("#hiddenFacId").val();
+        downloadCSV(sessionid,classid,facid,'downloadDetailsReport');
+     })
 });

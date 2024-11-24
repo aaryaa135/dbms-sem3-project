@@ -63,6 +63,7 @@ if(isset($_REQUEST['action']))
         //lets get the attendance of these students on that day by the fac
         $ado=new attendanceDetails();
         $presentStudents=$ado->getPresentListOfAClassByAFacOnADate($dbo,$sessionid,$classid,$facid,$ondate);
+        $attendanceStatusObject=$ado->getJSONAttenDanceReport($dbo,$sessionid,$classid,$facid,101);
         //lets iterate offer all students and mark them present
         //if in presentlist
         for($i=0;$i<count($allstudents);$i++)
@@ -76,9 +77,19 @@ if(isset($_REQUEST['action']))
                     break;
                 }
             }
+            $attendancelist=$attendanceStatusObject['studentlist'];
+            for($j=0;$j<count($attendancelist);$j++)
+            {
+                if($allstudents[$i]['id']==$attendancelist[$j]['id'])
+                {
+                    $allstudents[$i]['attended']=$attendancelist[$j]['attended'];
+                    $allstudents[$i]['percent']=$attendancelist[$j]['percent'];
+                    break;
+                }
+            }
         }
-         //$rv=[];
-         echo json_encode($allstudents);
+         $rv=['total'=>$attendanceStatusObject['total'],'studentlist'=>$allstudents];
+         echo json_encode($rv);
     }
     //data:{studentid:studentid,courseid:courseid,
     //facultyid:facultyid,sessionid:sessionid,
@@ -101,7 +112,7 @@ if(isset($_REQUEST['action']))
 
     //data:{sessionid:sessionid,classid:classid,
     //facid:facid,action:"downloadReport"},
-    if($action=="downloadReport")
+    if($action=="downloadSummaryReport"||$action=="downloadDetailsReport")
     {
         //fetch the courses taken by fac in sess
          $courseid=$_POST['classid'];
@@ -119,12 +130,71 @@ if(isset($_REQUEST['action']))
             [2,"BBM21002",30.00],
             [3,"COM21003",40.00]
          ];
-         $list=$ado->getAttenDanceReport($dbo,$sessionid,$courseid,$facultyid);
-         //now this list we have to generate, the actual one
+         $list=[];
+         if($action=='downloadSummaryReport')
+         {
+            $list=$ado->getAttenDanceReport($dbo,$sessionid,$courseid,$facultyid);         
+         }
+         else{
+            $list=$ado->getDetailedAttenDanceReport($dbo,$sessionid,$courseid,$facultyid);         
+         }//now this list we have to generate, the actual one
          $filename="/attendanceapp/report.csv";
          $rv=["filename"=>$filename];
          createCSVReport($list,$filename);
          echo json_encode($rv);
+    }
+    if($action=='getdefaulterStudentList')
+    {
+        $rv=[];
+        //fetch the courses taken by fac in sess
+        $courseid=$_POST['classid'];
+        $sessionid=$_POST['sessionid'];
+        $facultyid=$_POST['facid'];
+        $cutoff=$_POST['cutoff'];
+        $dbo=new Database();
+        $ado=new attendanceDetails();
+        $list=$ado->getJSONAttenDanceReport($dbo,$sessionid,$courseid,$facultyid,$cutoff);
+         //now this list we have to generate, the actual one
+        $rv=$list;
+        echo json_encode($rv);
+    }
+    if($action=='sendEmailToDefaulterStudents')
+    {
+        $rv=[];
+        //fetch the courses taken by fac in sess
+        $courseid=$_POST['classid'];
+        $sessionid=$_POST['sessionid'];
+        $facultyid=$_POST['facid'];
+        $cutoff=$_POST['cutoff'];
+        $dbo=new Database();
+        $ado=new attendanceDetails();
+        $list=$ado->getJSONAttenDanceReport($dbo,$sessionid,$courseid,$facultyid,$cutoff);
+         //now this list we have to generate, the actual one
+        //$rv=$list;
+        $fo=new faculty_details();
+        $fname=$fo->getFacultyName($dbo,$facultyid);
+        $courseName=$ado->getCourseName($dbo,$courseid);
+        $studentlist=$list['studentlist'];
+
+        $mailsent='NOTOK';
+        for($i=0;$i<count($studentlist);$i++)
+        {
+                $toemail=$studentlist[$i]['email_id'];
+                $studentid=$studentlist[$i]['id'];
+                $sname=$studentlist[$i]['name'];
+                $currentTimestamp = time();
+                $ondate = date("Y-m-d H:i:s", $currentTimestamp);
+                $message='Dear '.$sname.', you have shortage of attendance,less than '.$cutoff.'%, in '.$courseName.' taken by '.$fname.'. Please meet the corresponding faculty ASAP.';
+                         
+                 $c = mail($toemail, "SHORTAGE OF ATTENDANCE", $message);
+                 if($c)
+                 {
+                    $mailsent='OK';
+                    $ado->logSentEmail($dbo,$sessionid,$courseid,$facultyid,$studentid,$message,$ondate,$toemail);
+                 }
+        }
+        $rv['mailsent']=$mailsent;
+        echo json_encode($rv);
     }
 }
 ?>

@@ -52,6 +52,29 @@ class faculty_details
       }
       return $rv;
     }
+    public function getFacultyName($dbo,$facid)
+    {
+      $name='';
+      $c="select name from faculty_details where id=:id";
+          $s=$dbo->conn->prepare($c);
+          try{
+             $s->execute([":id"=>$facid]);
+             if($s->rowCount()>0)
+             {
+                 $result=$s->fetchAll(PDO::FETCH_ASSOC)[0];
+                 $name=$result['name'];
+             }
+             else{
+              //user name does not exists
+              $name='';
+             }
+          }
+          catch(PDOException $e)
+          {
+
+          }
+          return $name;
+    }
 }
 ?>
 
