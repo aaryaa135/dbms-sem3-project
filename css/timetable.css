@@ -1,134 +1,135 @@
-/* styles.css */
-
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
+.Monday{
+    width: 100%;
+    cursor: pointer;
     box-sizing: border-box;
+    margin-left: 0px !important;
+    position: absolute !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.Tuesday {
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 0px !important;
+    position: absolute !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-
-/* Header */
-.tt {
-    background: linear-gradient(135deg, #000000, #000000);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.Wednesday{
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 0px !important;
+    position: absolute !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-
-.tt h1 {
-    font-size: 2.5rem;
-    margin: 0;
+.Thrusday {
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 0px !important;
+    position: absolute !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-
-/* Timetable container */
-.timetable-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    overflow: auto;
+.Friday{
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-left: 0px !important;
+    position: absolute !important;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-
-table {
-    width: 90%;
-    max-width: 1200px;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background: white;
-    border-radius: 8px;
+#days .day:first-child{
+	float:left;
+    margin-left: -1px;
+    border-left: 1px solid rgba(255,255,255,.5);
+}
+.day {
+    float: left;
+    border-left: 1px solid;
+    height: 100%;
+    position: relative;
+    width: 171.2px;
+}
+#objectPContainer {
+    float: left;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-thead {
-    background-color: #000000;
-    color: white;
+#days {
+    float: left;
+    width: 860px;
+    height: 799px;
+    background-color: #d8d8d8;
+    z-index: 999;
 }
-
-th, td {
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-    font-size: 1rem;
+body{background-image: url(https://images.unsplash.com/photo-1527416019501-8364a9a4815c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-left:300px;
+	font-family: 'Roboto Condensed', sans-serif;
 }
-
-td {
-    background-color: #f9f9f9;
-    cursor: pointer;
+#leftScheduleCorner {
+    width: 0;
+    height: 10px;
+    float: left;
+    margin-right: 29px;
 }
-
-td.editable {
-    background-color: #fffdfd;
+p{
+	margin-top:3px;
+	margin-left: 3px; 
+    display: block;
 }
-
-th {
-    font-weight: bold;
+.hourText{
+    display: table;
+    float: left;
+    height: 100%;
+    width: 100%;
 }
-
-tr:nth-child(even) td {
-    background-color: #f1f1f1;
+.hourText {
+    display: table;
+    float: left;
+    height: 100%;
+    width: 100%;
 }
-
-/* Actions */
-.actions {
-    text-align: center;
+.hour{
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid;
+	box-sizing: border-box;
+	float: left;
 }
-
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    background: #000000;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+#hours {
+    float: left;
+    width: 30px;
+    border-right: 1px solid;
+    position: relative;
+    height: 799px;
+    z-index: 1;
 }
-
-button:hover {
-    background-color: #000000;
+.weekDay {
+    float: left;
+    border-left: 1px solid;
+    width: 171.2px;
+    height: 100%;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    table {
-        width: 100%;
-        font-size: 0.9rem;
-    }
-
-    th, td {
-        padding: 10px;
-    }
-
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    button {
-        font-size: 0.9rem;
-    }
+#schedule {
+    float: left!important;
+    width: 890px;
+    background-color: #fff;
+    border: 1px solid;
+    height: 750px;
+    transform-origin: 0 0;
 }
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.5rem;
-    }
-
-    button {
-        width: 100%;
-        margin: 5px 0;
-    }
+#weekDays {
+    float: left;
+    width: 100%;
+    height: 29px;
+    border-bottom: 1px solid;
+    background-color: #fff;
 }
