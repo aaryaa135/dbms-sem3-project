@@ -2,137 +2,115 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koshish Club | HOME</title>
-    <link rel="shortcut icon" type="images" href="images/Koshish_Logo-removebg-preview 2.png">
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
-  
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshish Club | Timetable</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="images/Koshish_Logo-removebg-preview 2.png">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- header section starts  -->
+  <!-- Header Section -->
+  <header class="header">
+    <a href="index.html" class="logo"><i class="fas fa-user-graduate"></i> Koshish Club </a>
+    <div id="menu-btn" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="gallery1.html">GALLERY</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="ContactUs/contact.php">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="header">
+  <!-- Timetable Section -->
+  <div class="container">
+    <h1>Weekly Timetable</h1>
+    <table id="timetable">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1-3</td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td>4-5</td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td>6-7</td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+        </tr>
+        <tr>
+          <td>8-10</td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+        </tr>
+      </tbody>
+    </table>
 
-        <a href="index.html" class="logo"> <i class="fas fa-user-graduate"></i> Koshish Club </a>
+    <button id="saveButton">Save Timetable</button>
+    <button id="resetButton">Reset Timetable</button>
+  </div>
 
-        <div id="menu-btn" class="fas fa-bars"></div>
+  <!-- Footer Section -->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>explore</h3>
+        <a href="home.html"> <i class="fas fa-arrow-right"></i> HOME </a>
+        <a href="about.html"> <i class="fas fa-arrow-right"></i> ABOUT </a>
+        <a href="course-1.html"> <i class="fas fa-arrow-right"></i> GALLERY </a>
+        <a href="course-2.html"> <i class="fas fa-arrow-right"></i> BLOG </a>
+        <a href="teachers.html"> <i class="fas fa-arrow-right"></i> CONTACT US </a>
+      </div>
 
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="gallery1.html">GALLERY</a></li>
-                <li><a href="blog.html">BLOG</a></li>
-                <li><a href="ContactUs/contact.php">CONTACT US</a></li>
-            </ul>
-        </nav>
+      <div class="box">
+        <h3>Follow US</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="https://www.youtube.com/channel/UCXxTe5lB_fjn1H5azGBgWDw"> <i class="fab fa-youtube"></i> youtube </a>
+        <a href="#"> <i class="fab fa-github"></i> github </a>
+      </div>
+    </div>
 
-    </header>
+    <div class="credit"> All rights reserved! </div>
+  </section>
 
-    <!-- header section ends -->
-
-    <!-- home section starts  -->
-
-    <section class="home">
-
-        <div class="image">
-            <img src="images/vecteezy_illustration-vector-graphic-cartoon-character-of-home-study_6584649.jpg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>KOSHISH CLUB</h3>
-            <p>At Jaypee University of Information Technology, Solan, this club is committed to spreading education and positivity among underprivileged children. Through structured lessons and interactive activities, we aim to empower young minds and foster a brighter future.</p>
-            
-        </div>
-
-    </section>
-
-    <!-- home section ends -->
-
-    <!-- categories section starts  -->
-
-    <section class="category">
-
-        <a href="#" class="box">
-            <img src="images/avatar_13255298.png" alt="">
-            <h3>Attendance</h3>
-        </a>
-
-        <a href="timetable.html" class="box">
-            <img src="images/clock_10209191.png" alt="">
-            <h3>Timetable</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="images/development_11906332.png" alt="">
-            <h3>Student Progress</h3>
-        </a>
-
-        <a href="teachers.html" class="box">
-            <img src="images/training_1654193 (2).png" alt="">
-            <h3>Teacher's Info</h3>
-        </a>
-
-        <a href="#" class="box">
-            <img src="images/arrow_14058129.png" alt="">
-            <h3>Inbox</h3>
-        </a>
-
-    </section>
-
-    <!-- categories section ends -->
-
-    <!-- Wrap both sections in a team-container -->
-<!-- Wrap both sections inside a team-container -->
-
-
-
-
-    <!-- footer section starts  -->
-
-    <section class="footer">
-
-        <div class="box-container">
-
-            <div class="box">
-                <h3>explore</h3>
-                <a href="home.html"> <i class="fas fa-arrow-right"></i> HOME </a>
-                <a href="about.html"> <i class="fas fa-arrow-right"></i> ABOUT </a>
-                <a href="course-1.html"> <i class="fas fa-arrow-right"></i> GALLERY </a>
-                <a href="course-2.html"> <i class="fas fa-arrow-right"></i> BLOG </a>
-                <a href="teachers.html"> <i class="fas fa-arrow-right"></i> CONTACT US </a>
-            </div>
-
-            <div class="box">
-                <h3>Follow US</h3>
-                <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-                <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-                <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-                <a href="https://www.youtube.com/channel/UCXxTe5lB_fjn1H5azGBgWDw"> <i class="fab fa-youtube"></i> youtube </a>
-                <a href="#"> <i class="fab fa-github"></i> github </a>
-            </div>
-
-        </div>
-
-        <div class="credit"> All rights reserved! </div>
-
-    </section>
-
-    <!-- footer section ends -->
-
-    <!-- custom js file link  -->
-    <script src="js/script.js"></script>
+  <!-- JavaScript for functionality -->
+  <script src="script.js"></script>
 
 </body>
 
