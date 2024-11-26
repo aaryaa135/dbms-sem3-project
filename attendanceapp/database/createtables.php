@@ -153,31 +153,31 @@ clearTable($dbo, "student_details");
 $c = "insert into student_details
 (id,roll_no,name,email_id)
 values
-(1,'CSB21001','Alexy Johnson','abc@gmail.com'),
-(2,'CSB21002','Emily Smith','abc@gmail.com'),
-(3,'CSB21003','Ryan Thompson','abc@gmail.com'),
-(4,'CSB21004','Sophia Williams','abc@gmail.com'),
-(5,'CSB21005','Daniel Brown','abc@gmail.com'),
-(6,'CSB21006','Olivia Jones','abc@gmail.com'),
-(7,'CSB21007','Matthew Davis','abc@gmail.com'),
-(8,'CSB21008','Emma Miller','abc@gmail.com'),
-(9,'CSB21009','David Wilson','abc@gmail.com'),
-(10,'CSB21010','Sarah Taylor','abc@gmail.com'),
-(11,'CSB21011','Michael Martinez','abc@gmail.com'),
-(12,'CSB21012','Ava Anderson','abc@gmail.com'),
+(1,'K701','SHARAD','abc@gmail.com'),
+(2,'K702','NIKHIL','abc@gmail.com'),
+(3,'K703','MAYANK','abc@gmail.com'),
+(4,'K704','DEEPIKA','abc@gmail.com'),
+(5,'K705','DEEPMALA','abc@gmail.com'),
+(6,'K601','HARSH','abc@gmail.com'),
+(7,'K801','MAAHI','abc@gmail.com'),
+(8,'K602','MANNU','abc@gmail.com'),
+(9,'K802','GANGA','abc@gmail.com'),
+(10,'K706','AMAN','abc@gmail.com'),
+(11,'K803','PAWAN','abc@gmail.com'),
+(12,'K707','PRINCE','abc@gmail.com'),
 
-(13,'CSM21001','Liam Garcia','abc@gmail.com'),
-(14,'CSM21002','Isabella Rodriguez','abc@gmail.com'),
-(15,'CSM21003','Ethan Martinez','abc@gmail.com'),
-(16,'CSM21004','Olivia Hernandez','abc@gmail.com'),
-(17,'CSM21005','Mason Lopez','abc@gmail.com'),
-(18,'CSM21006','Sophia Perez','abc@gmail.com'),
-(19,'CSM21007','Alexander Gonzalez','abc@gmail.com'),
-(20,'CSM21008','Ava Johnson','abc@gmail.com'),
-(21,'CSM21009','William Martinez','abc@gmail.com'),
-(22,'CSM21010','Emily Brown','abc@gmail.com'),
-(23,'CSM21011','James Rodriguez','abc@gmail.com'),
-(24,'CSM21012','Emma Hernandez','abc@gmail.com')
+(13,'K101','ARNAV(VEER)','abc@gmail.com'),
+(14,'K201','KANAK','abc@gmail.com'),
+(15,'K501','ARNAV','abc@gmail.com'),
+(16,'K401','ALOK','abc@gmail.com'),
+(17,'K402','NITIK','abc@gmail.com'),
+(18,'K403','PRINCE2','abc@gmail.com'),
+(19,'K708','LIZA','abc@gmail.com'),
+(20,'KN01','VIRAJ','abc@gmail.com'),
+(21,'K301','ABHINAV','abc@gmail.com'),
+(22,'K901','VISHAKA','abc@gmail.com'),
+(23,'K804','LUCKY','abc@gmail.com'),
+(24,'K404','PREETI','abc@gmail.com')
 ";
 
 $s = $dbo->conn->prepare($c);
@@ -191,12 +191,12 @@ clearTable($dbo, "faculty_details");
 $c = "insert into faculty_details
 (id,user_name,password,name)
 values
-(1,'rcb','123','Ram Charan Baishya'),
-(2,'arindam','123','Arindam Karmakar'),
-(3,'pal','123','Pallabi'),
-(4,'anuj','123','Anuj Agarwal'),
-(5,'mriganka','123','Mriganka Sekhar'),
-(6,'manooj','123','Manooj Hazarika')";
+(1,'dar','123','DARSHIKA'),
+(2,'raa','123','RAAVI'),
+(3,'aar','123','AARYA'),
+(4,'var','123','VARDAAN'),
+(5,'pri','123','PRIYAL'),
+(6,'ras','123','RASHI')";
 
 $s = $dbo->conn->prepare($c);
 try {
@@ -209,9 +209,9 @@ clearTable($dbo, "session_details");
 $c = "insert into session_details
 (id,year,term)
 values
-(1,2023,'SPRING SEMESTER'),
-(2,2023,'AUTUMN SEMESTER'),
-(3,2024,'SPRING SEMESTER')";
+(1,2024,'ODD SEMESTER'),
+(2,2025,'EVEN SEMESTER'),
+(3,2025,'ODD SEMESTER')";
 
 $s = $dbo->conn->prepare($c);
 try {
@@ -224,12 +224,12 @@ clearTable($dbo, "course_details");
 $c = "insert into course_details
 (id,title,code,credit)
 values
-  (1,'Database management system lab','CO321',2),
-  (2,'Pattern Recognition','CO215',3),
-  (3,'Data Mining & Data Warehousing','CS112',4),
-  (4,'ARTIFICIAL INTELLIGENCE','CS670',4),
-  (5,'THEORY OF COMPUTATION ','CO432',3),
-  (6,'DEMYSTIFYING NETWORKING ','CS673',1)";
+  (1,'ENGLISH','EN24',2),
+  (2,'MATHS','MA24',3),
+  (3,'EVS','EV24',4),
+  (4,'HINDI','HI24',4),
+  (5,'SCIENCE','SC24',3),
+  (6,'SOCIAL SCIENCE','SO24',1)";
 $s = $dbo->conn->prepare($c);
 try {
   $s->execute();
