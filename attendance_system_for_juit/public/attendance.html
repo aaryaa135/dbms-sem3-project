@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1><i class="fas fa-user-clock"></i> Attendance Manager</h1>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fas fa-bars"></i></button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showAddStudent()">Add Student</a>
+                    <a href="#" onclick="showStudentList()">View Students</a>
+                    <a href="#" onclick="showMarkAttendance()">Mark Attendance</a>
+                    <a href="#" onclick="showAttendanceView()">View Attendance</a>
+                    <a href="#" onclick="showReports()">Generate Reports</a>
+                    <a href="#" id="delete-all-data">Delete All Data</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="add-student" class="card" style="display: none;">
+                <h2>Add/Edit Student</h2>
+                <input type="text" id="student-roll-number" placeholder="Roll Number">
+                <input type="text" id="student-name" placeholder="Student Name">
+                <input type="tel" id="student-phone" placeholder="Phone Number">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="same-as-phone" onchange="fillWhatsAppNumber()">
+                    <label for="same-as-phone">WhatsApp number same as phone number</label>
+                </div>
+                <input type="tel" id="student-whatsapp" placeholder="WhatsApp Number">
+                <button id="add-edit-student-btn" onclick="addStudent()">Add Student</button>
+                <p id="error-message" class="error"></p>
+            </div>
+
+            <div id="student-list" class="card" style="display: none;">
+                <h2>Students</h2>
+                <input type="text" id="search-input" placeholder="Search students" oninput="searchStudents()">
+                <div class="table-container">
+                    <table id="student-table">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <th>Phone Number</th>
+                                <th>Actions</th> 
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="mark-attendance" class="card" style="display: none;">
+                <h2>Mark Attendance</h2>
+                <input type="date" id="attendance-date">
+                <select id="attendance-period">
+                    <option value="full">Full Day</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                </select>
+                <input type="text" id="attendance-search" placeholder="Search students" oninput="searchAttendanceStudents()">
+                <button id="mark-all-present" onclick="markAllPresent()">Mark Remaining Present</button>
+                <div id="attendance-list"></div>
+                <button onclick="saveAttendance()">Save Attendance</button>
+            </div>
+
+            <div id="view-attendance" class="card" style="display: none;">
+                <h2>View Attendance</h2>
+                <input type="date" id="view-attendance-date" onchange="updateAttendanceView()">
+                <div class="table-container">
+                    <table id="attendance-view-table">
+                        <thead>
+                            <tr>
+                                <th>Roll Number</th>
+                                <th>Name</th>
+                                <th>Morning</th>
+                                <th>Afternoon</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="reports" class="card" style="display: none;">
+                <h2>Generate Attendance Report</h2>
+                <input type="date" id="report-start-date" placeholder="Start Date">
+                <input type="date" id="report-end-date" placeholder="End Date">
+                <button onclick="generateAttendanceReport()">Generate Report</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="bottom-nav" id="bottom-nav">
+        <a href="#" onclick="showMarkAttendance()"><i class="fas fa-check-square"></i></a>
+        <a href="#" onclick="showStudentList()"><i class="fas fa-list"></i></a>
+        <a href="#" onclick="showAttendanceView()"><i class="fas fa-calendar-alt"></i></a>
+        <a href="#" onclick="showReports()"><i class="fas fa-file-alt"></i></a>
+      </div>
+      
+    <div id="overlay" class="overlay"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
