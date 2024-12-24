@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #4CAF50;
-  --primary-color-dark: #45a049;
+  --primary-color: #224bcf;
+  --primary-color-dark: #224bcf;
   --secondary-color: #2196F3;
   --text-color: #333;
   --background-color: #f4f4f4;
@@ -166,7 +166,7 @@ button:hover {
 
 .attendance-btn.present {
   background-color: #e6f7e6;
-  color: #4CAF50;
+  color: #224bcf;
 }
 
 .attendance-btn.absent {
@@ -175,7 +175,7 @@ button:hover {
 }
 
 .attendance-btn.active.present {
-  background-color: #4CAF50;
+  background-color: #224bcf;
   color: white;
 }
 
@@ -186,7 +186,7 @@ button:hover {
 
 #mark-all-present {
   margin: 10px 0;
-  background-color: #4CAF50;
+  background-color: #224bcf;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -293,7 +293,7 @@ button:hover {
 }
 
 .message.success {
-  background-color: #4CAF50;
+  background-color: #224bcf;
 }
 
 .message.error {
