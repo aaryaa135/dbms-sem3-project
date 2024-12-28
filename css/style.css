@@ -450,8 +450,9 @@ section {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
-    grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+    gap: 1.6rem;
+    
 }
 
 .blog .box .image {
@@ -465,12 +466,14 @@ section {
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
-    border-radius: .5rem;
+    border-top-left-radius:0.5rem;
+    border-top-right-radius: 0.5rem;
+
 }
 
 .blog .box .content {
     padding: 2rem;
-    background: #f5f5f5;
+    background: white;
 }
 
 .blog .box .content .icons {
@@ -492,9 +495,6 @@ section {
     color: #666;
 }
 
-.blog .box .content .icons a:hover {
-    color: #224bcf;
-}
 
 .blog .box .content .icons a i {
     padding-right: .5rem;
@@ -504,7 +504,12 @@ section {
 .blog .box .content h3 {
     font-size: 1.7rem;
     padding: .5rem 0;
-    color: #302851;
+    color: #ffffff;
+    background-color:rgb(98, 97, 97);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    
 }
 
 .blog .box .content p {
@@ -512,6 +517,7 @@ section {
     font-size: 1.4rem;
     line-height: 2.5;
     color: #666;
+    text-align: center;
 }
 
 .contact .icons-container {
@@ -710,43 +716,39 @@ section {
 /*# sourceMappingURL=style.css.map */
 
 .course-3 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-content: center;
+    
 }
 
 .course-3 .box {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: calc(33.33% - 20px);
     text-align: center;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
 }
 
 .course-3 .box:hover {
-    transform: translateY(-10px);
+    transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .course-3 .image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    justify-content: space-between;
+    border-top-left-radius:0.5rem;
+    border-top-right-radius: 0.5rem;
     margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
 }
 
 .course-3 .content h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #333;
     margin: 10px 0 5px;
+    font-style:italic;
+    
 }
 
-.course-3 .content p {
-    font-size: 0.9rem;
-    color: #666;
-}
+
