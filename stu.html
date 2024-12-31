@@ -4,7 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final module test</title>
+    <title>Koshish Club | HOME</title>
+    <link rel="shortcut icon" type="images" href="images/Koshish_Logo-removebg-preview 2.png">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+      <a href="index.html" class="logo"> <i class="fas fa-user-graduate"></i> Koshish Club </a>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+      <nav class="navbar">
+          <ul>
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="gallery1.html">GALLERY</a></li>
+              <li><a href="blog.html">BLOG</a></li>
+              <li><a href="ContactUs/contact.php">CONTACT US</a></li>
+          </ul>
+      </nav>
+
+    </header>
     <link rel="stylesheet" href="css/stu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,28 +42,26 @@
 
 
     <div class="container">
-        <h1>Student Management CRUD</h1>
+        <h1>Student Progress</h1>
         <div class="input-container">
             <input type="text" placeholder="Name" id="name">
-            <input type="email" placeholder="Email" id="email">
-            <input type="text" placeholder="GPA" id="grade">
+            <input type="text" placeholder="Marks" id="grade">
             <input type="number" placeholder="Age" id="age">
-            <input type="text" placeholder="Degree" id="degree">
+            <input type="text" placeholder="Class" id="degree">
         </div>
 
         <button class="button" type="submit" id="submit" onclick="addStudent()">Add Student</button>
     
-        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, email or Degree">
+        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, Age or Class">
 
         <table class="table" id="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Student Name</th>
-                    <th>Email</th>
                     <th>Age</th>
-                    <th>GPA</th>
-                    <th>Degree</th>
+                    <th>Marks</th>
+                    <th>Class</th>
                 </tr>
             </thead>
     
@@ -46,5 +71,40 @@
     </div>
 
     <script src="js/stu.js"></script>
+
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>explore</h3>
+            <a href="index.html"> <i class="fas fa-arrow-right"></i> HOME </a>
+            <a href="about.html"> <i class="fas fa-arrow-right"></i> ABOUT </a>
+            <a href="gallery1.html"> <i class="fas fa-arrow-right"></i> GALLERY </a>
+            <a href="blog.html"> <i class="fas fa-arrow-right"></i> BLOG </a>
+            <a href="teachers.html"> <i class="fas fa-arrow-right"></i> CONTACT US </a>
+        </div>
+
+        <div class="box">
+            <h3>Follow US</h3> 
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="https://www.youtube.com/channel/UCXxTe5lB_fjn1H5azGBgWDw"> <i class="fab fa-youtube"></i> youtube </a>
+            <a href="#"> <i class="fab fa-github"></i> github </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> All rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
 </body>
 </html>

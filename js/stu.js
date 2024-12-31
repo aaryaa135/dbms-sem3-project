@@ -4,7 +4,6 @@ var global_id;
 function addStudent(){
  
     const nameValue = document.getElementById('name').value;
-    const emailValue = document.getElementById('email').value;
     const ageValue = document.getElementById('age').value;
     const gradeValue = document.getElementById('grade').value;
     const degreeValue = document.getElementById('degree').value;
@@ -24,7 +23,6 @@ function addStudent(){
         let studentobj = students[index];
 
         studentobj['name'] = nameValue;
-        studentobj['email'] = emailValue;
         studentobj['grade'] = gradeValue;
         studentobj['age'] = ageValue;
         studentobj['degree'] = degreeValue;
@@ -35,7 +33,6 @@ function addStudent(){
         document.querySelector("#submit").innerHTML = "Add Student";
 
             document.getElementById('name').value="";
-            document.getElementById('email').value="";
             document.getElementById('age').value="";
             document.getElementById('grade').value="";
             document.getElementById('degree').value="";
@@ -51,8 +48,7 @@ function addStudent(){
 
     students.push({
         ID:count,
-        name:nameValue,
-        email:emailValue,
+        name:nameValue;
         age:ageValue,
         grade:gradeValue,
         degree:degreeValue
@@ -60,7 +56,6 @@ function addStudent(){
 
 
     document.getElementById('name').value="";
-    document.getElementById('email').value="";
     document.getElementById('age').value="";
     document.getElementById('grade').value="";
     document.getElementById('degree').value="";
@@ -83,7 +78,6 @@ function showTable(){
 
         var id = document.createElement('td');
         const name = document.createElement('td');
-        const email = document.createElement('td');
         const age = document.createElement('td');
         const grade = document.createElement('td');
         const degree = document.createElement('td');
@@ -94,9 +88,6 @@ function showTable(){
             }
             else if(key=='name'){
                 name.innerHTML = student[key];
-            }
-            else if(key=='email'){
-                email.innerHTML = student[key];
             }
             else if(key=='age'){
                 age.innerHTML = student[key];
@@ -109,7 +100,6 @@ function showTable(){
 
             row.appendChild(id);
             row.appendChild(name);
-            row.appendChild(email);
             row.appendChild(age);
             row.appendChild(grade);
             row.appendChild(degree);       
@@ -156,7 +146,6 @@ function edit(id) {
     }
 
     document.querySelector("#name").value = student['name'];
-    document.querySelector("#email").value = student['email'];
     document.querySelector("#grade").value = student['grade'];
     document.querySelector("#age").value = student['age'];
     document.querySelector("#degree").value = student['degree'];
