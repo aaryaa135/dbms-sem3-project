@@ -15,28 +15,26 @@
 
 
     <div class="container">
-        <h1>Student Management CRUD</h1>
+        <h1>Student Progress</h1>
         <div class="input-container">
             <input type="text" placeholder="Name" id="name">
-            <input type="email" placeholder="Email" id="email">
-            <input type="text" placeholder="GPA" id="grade">
+            <input type="text" placeholder="Marks" id="grade">
             <input type="number" placeholder="Age" id="age">
-            <input type="text" placeholder="Degree" id="degree">
+            <input type="text" placeholder="Class" id="degree">
         </div>
 
         <button class="button" type="submit" id="submit" onclick="addStudent()">Add Student</button>
     
-        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, email or Degree">
+        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search By Name, Age or Class">
 
         <table class="table" id="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Student Name</th>
-                    <th>Email</th>
                     <th>Age</th>
-                    <th>GPA</th>
-                    <th>Degree</th>
+                    <th>Marks</th>
+                    <th>Class</th>
                 </tr>
             </thead>
     
