@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
 
     <!-- header section starts  -->
 
@@ -27,9 +27,69 @@
               <li><a href="about.html">ABOUT</a></li>
               <li><a href="gallery1.html">GALLERY</a></li>
               <li><a href="blog.html">BLOG</a></li>
-              <li><a href="ContactUs/contact.html">CONTACT US</a></li>
+              <li><a href="contact.html">CONTACT US</a></li>
           </ul>
       </nav>
 
-  </header>
+    </header>
+
+  <main>
+    <section class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get involved? We'd love to hear from you!</p>
+        <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </section>
+    <section class="contact-info">
+        <h2>Our Contact Information</h2>
+        <p>Email: <a href="mailto:info@koshishclub.org">Info@Koshishclub.org</a></p>
+        <p>Phone: <a href="tel:+91234567890">+91 12345 67890</a></p>
+        <p>Address: Koshish Club Office, JUIT</p>
+    </section>
+  </main>
+
+  <!-- footer section starts  -->
+
+  <section class="footer">
+
+      <div class="box-container">
+
+          <div class="box">
+              <h3>explore</h3>
+              <a href="index.html"> <i class="fas fa-arrow-right"></i> HOME </a>
+              <a href="about.html"> <i class="fas fa-arrow-right"></i> ABOUT </a>
+              <a href="gallery1.html"> <i class="fas fa-arrow-right"></i> GALLERY </a>
+              <a href="blog.html"> <i class="fas fa-arrow-right"></i> BLOG </a>
+              <a href="teachers.html"> <i class="fas fa-arrow-right"></i> CONTACT US </a>
+          </div>
+
+          <div class="box">
+              <h3>Follow US</h3> 
+              <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+              <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+              <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+              <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+              <a href="https://www.youtube.com/channel/UCXxTe5lB_fjn1H5azGBgWDw"> <i class="fab fa-youtube"></i> youtube </a>
+              <a href="#"> <i class="fab fa-github"></i> github </a>
+          </div>
+
+      </div>
+
+      <div class="credit"> All rights reserved! </div>
+
+  </section>
+  <script src="js/script.js"></script>
 </html>
